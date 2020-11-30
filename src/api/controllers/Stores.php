@@ -17,7 +17,7 @@ class Stores extends Store
                 echo json_encode([
                     "id" => $id,
                     "name" => $name,
-                    "thumb" => dirname($_ENV['BASE'], 1) . $thumb
+                    "thumb" => dirname($_ENV['BASE'], 1) . $img_path
                 ]);
             }
         }
@@ -32,14 +32,14 @@ class Stores extends Store
         $findStore = $this->selectBy("name", $name);
 
         if (!$findStore) {
-            if ($name != "" && $_FILES['thumb']['name'] != "") {
-                $thumb = $this->imgCreateHandler();
+            if ($name != "" && $_FILES['img_path']['name'] != "") {
+                $img_path = $this->imgCreateHandler();
 
-                $this->moveUpload($thumb);
+                $this->moveUpload($img_path);
 
                 $this->insert([
                     "name" => $name,
-                    "thumb" => $thumb
+                    "thumb" => $img_path
                 ]);
 
                 http_response_code(201);
@@ -73,12 +73,12 @@ class Stores extends Store
 
         extract($data);
 
-        $thumb = $this->imgCreateHandler();
-        $this->moveUpload($thumb);
+        $img_path = $this->imgCreateHandler();
+        $this->moveUpload($img_path);
 
         $updateStore = $this->update([
             "name" => $name,
-            "thumb" => $thumb,
+            "thumb" => $img_path,
         ], ["id" => $id]);
 
         if ($updateStore) {
@@ -113,7 +113,7 @@ class Stores extends Store
                 [
                     "id" => $id,
                     "name" => $name,
-                    "thumb" => dirname($_ENV['BASE'], 1) . $thumb
+                    "thumb" => dirname($_ENV['BASE'], 1) . $img_path
                 ]
             );
         } else {

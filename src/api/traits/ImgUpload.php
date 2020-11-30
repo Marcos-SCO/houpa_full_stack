@@ -10,8 +10,8 @@ trait ImgUpload
 
     public function moveUpload($imgFullPath)
     {
-        if ($_FILES["thumb"]["tmp_name"] != "") {
-            return move_uploaded_file($_FILES['thumb']['tmp_name'], dirname(__DIR__, 2) . $imgFullPath);
+        if ($_FILES["img_path"]["tmp_name"] != "") {
+            return move_uploaded_file($_FILES['img_path']['tmp_name'], dirname(__DIR__, 2) . $imgFullPath);
         } else {
             return  "Envie uma imagem";
         }
@@ -32,7 +32,7 @@ trait ImgUpload
             $id = $_POST['id'];
         }
 
-        return $this->imgFullPath($id, $_FILES['thumb']['name']);
+        return $this->imgFullPath($id, $_FILES['img_path']['name']);
     }
 
     public function imgFullPath($id, $imgName)
@@ -75,11 +75,11 @@ trait ImgUpload
         $data = $this->getPostData();
         extract($data);
 
-        $thumb = $this->imgCreateHandler();
-        $this->moveUpload($thumb);
+        $img_path = $this->imgCreateHandler();
+        $this->moveUpload($img_path);
 
         $updateImg = $this->update([
-            "thumb" => $thumb,
+            "img_path" => $img_path,
         ], ["id_Store" => $id_Store]);
 
         if ($updateImg) {
