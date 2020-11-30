@@ -1,0 +1,13 @@
+### Domain
+BASE="{{your domain}}/src/api"
+
+### Database 
+HOST="your_host"
+PORT=3306
+DBNAME="your_database"
+CHARSET="utf8"
+USER="root"
+PASSWORD=""
+
+### Timezone
+DEFAULT_TIME_ZONE="America/Sao_Paulo"
