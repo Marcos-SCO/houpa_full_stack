@@ -26,7 +26,7 @@ class Stores extends Store
     public function createStore()
     {
         $data = $this->getPostData();
-        extract(filter_input_array(INPUT_POST, $data, FILTER_DEFAULT));
+        extract($data);
 
         // Find email in db
         $findStore = $this->selectBy("name", $name);
