@@ -13,13 +13,14 @@ class Products extends Product
         if ($products) {
             http_response_code(200);
 
+            $data = [];
             foreach ($products as $product) {
                 extract((array)$product);
 
                 // Seleciona grids
                 $productSizes = $this->selectProductGrid($id);
-
-                echo json_encode([
+                
+                $data[] = [
                     "description" => $description,
                     "grids" => $productSizes,
                     "id" => $id,
@@ -27,8 +28,9 @@ class Products extends Product
                     "photo" => dirname($_ENV['BASE'], 1) . $photo,
                     "price" => $price,
                     "store" => $store
-                ], JSON_UNESCAPED_SLASHES);
+                ];
             }
+            echo json_encode($data, JSON_UNESCAPED_SLASHES);
         }
     }
 

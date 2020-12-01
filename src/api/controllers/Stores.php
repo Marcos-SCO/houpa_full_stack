@@ -9,6 +9,8 @@ class Stores extends Store
     public function index()
     {
         $stores = $this->selectAll();
+
+        $data = [];
         if ($stores) {
             http_response_code(200);
             foreach ($stores as $store) {
@@ -16,13 +18,15 @@ class Stores extends Store
 
                 $products = $this->selectStoreProducts($id);
 
-                echo json_encode([
+                $data[] = [
                     "id" => $id,
                     "name" => $name,
                     "products" => $products,
                     "thumb" => dirname($_ENV['BASE'], 1) . $img_path
-                ], JSON_UNESCAPED_SLASHES);
+                ];
             }
+            
+            echo json_encode($data, JSON_UNESCAPED_SLASHES);
         }
     }
 
