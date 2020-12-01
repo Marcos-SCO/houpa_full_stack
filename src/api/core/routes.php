@@ -16,14 +16,22 @@ $router->namespace("Api\Controllers");
 // Lojas
 $router->get("/lojas", "Stores:index");
 $router->get("/lojas/{id}", "Stores:getStore"); 
-
-// Extras
+// Grava um registro
 $router->post("/lojas", "Stores:createStore");
-
 // Aqui o correto seria utilizar put mas deixei como post para conseguir enviar via form
 $router->post("/lojas/atualizar", "Stores:updateStore"); 
-
+// Deletar registro
 $router->delete("/lojas/deletar", "Stores:deleteStore");
+
+// Produtos
+$router->get("/produtos", "Products:index");
+$router->get("/produtos/{id}", "Products:getProduct"); 
+// Grava um registro
+$router->post("/produtos", "Products:createProduct");
+// Aqui o correto seria utilizar put mas deixei como post para conseguir enviar via form
+$router->post("/produtos/atualizar", "Products:updateProduct"); 
+// Deletar registro
+$router->delete("/produtos/deletar", "Products:deleteProduct");
 
 $router->dispatch();
 
