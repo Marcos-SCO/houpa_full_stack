@@ -27,7 +27,7 @@ class Products extends Product
                     "photo" => dirname($_ENV['BASE'], 1) . $photo,
                     "price" => $price,
                     "store" => $store
-                ]);
+                ], JSON_UNESCAPED_SLASHES);
             }
         }
     }

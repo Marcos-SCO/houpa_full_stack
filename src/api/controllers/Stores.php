@@ -21,7 +21,7 @@ class Stores extends Store
                     "name" => $name,
                     "products" => $products,
                     "thumb" => dirname($_ENV['BASE'], 1) . $img_path
-                ]);
+                ], JSON_UNESCAPED_SLASHES);
             }
         }
     }
