@@ -28,12 +28,11 @@ class Store extends Model
     public function selectStoreProducts($storeId)
     {
         $query = "SELECT 
-        p.description, p.id, p.name, p.photo, sp.price 
+        p.description, p.id, p.name, p.photo, 
+        (SELECT price FROM store_products WHERE id_product = p.id) as price
         FROM products as p
-        JOIN store_products as sp ON p.id = sp.store_id
-        JOIN stores as st ON sp.store_id = st.id  
-        WHERE p.id = :id";
-
+        WHERE p.store_id = :id";
+        
         return $this->customQuery($query, ['id' => $storeId]);
     }
 }
