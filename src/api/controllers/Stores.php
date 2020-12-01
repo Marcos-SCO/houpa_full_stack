@@ -14,9 +14,12 @@ class Stores extends Store
             foreach ($stores as $store) {
                 extract((array)$store);
 
+                $products = $this->selectStoreProducts($id);
+
                 echo json_encode([
                     "id" => $id,
                     "name" => $name,
+                    "products" => $products,
                     "thumb" => dirname($_ENV['BASE'], 1) . $img_path
                 ]);
             }
@@ -39,7 +42,7 @@ class Stores extends Store
 
                 $this->insert([
                     "name" => $name,
-                    "thumb" => $img_path
+                    "img_path" => $img_path
                 ]);
 
                 http_response_code(201);
