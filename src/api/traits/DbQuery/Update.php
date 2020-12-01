@@ -6,15 +6,17 @@ use Api\Models\Model;
 
 trait Update
 {
-    public function update(array $data, array $id)
+    public function update(array $data, array $id, $modelTable = null)
     {
+        $modelTable = $modelTable != null ? $modelTable : Model::$table;
+
         try {
             // Destruct id
             // list($idKey, $idVal) = $id;
             $idKey = array_keys($id)[0];
             $idVal = array_values($id)[0];
 
-            $query = "UPDATE " . Model::$table . " SET";
+            $query = "UPDATE " . $modelTable . " SET";
             foreach ($data as $field => $value) {
                 $query .= " {$field} = :{$field},";
             }

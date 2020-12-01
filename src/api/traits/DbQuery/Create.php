@@ -6,13 +6,15 @@ use Api\Models\Model;
 
 trait Create
 {
-    public function insert(array $data)
+    public function insert(array $data, $alternateModel = null)
     {
+        $modelTable = $alternateModel ? $alternateModel : Model::$table;
+
         try {
             $fields = implode(',', array_keys($data));
             $places = ':' . implode(',:', array_keys($data));
 
-            $query = "INSERT INTO " . Model::$table . " ({$fields}) VALUES ({$places})";
+            $query = "INSERT INTO " . $modelTable . " ({$fields}) VALUES ({$places})";
 
             $this->stmt = Model::$conn->prepare($query);
             foreach ($data as $name => $value) {
