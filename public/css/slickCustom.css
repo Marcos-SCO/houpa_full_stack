@@ -1,0 +1,98 @@
+/* --------------------- */
+/* Slick user implementation classes */
+/* --------------------- */
+
+.slick-container {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.slick-prev,
+.slick-next {
+    top: 40% !important
+}
+
+.slick-prev:before {
+    content: url('../img/left_arrow.svg');
+    color: #000;
+}
+
+.slick-next:before {
+    content: url('../img/right_arrow.svg');
+    color: #000;
+}
+
+.store-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 850px;
+    margin: auto
+}
+.store-figure {
+    display: flex;
+}
+.store-figure img {
+    max-width: 84px;
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid #ccccccdb;
+}
+.store-figure figcaption {
+    margin-left: 1.2rem;
+    margin-top: .5rem
+}
+.store-figure figcaption h3 {
+    font-size: 1rem;
+    font-weight: 500
+}
+
+
+.camisa-item {
+    position: relative;
+    margin: 1rem;
+    padding: .5rem .01rem 1rem;
+    border: 1px solid rgb(204 204 204 / 30%);
+    outline: none
+}
+
+.fav-item {
+    position: absolute;
+    right: .7rem;
+    top: .5rem;
+    border: 1px solid #cccccc42;
+    padding: .4rem .4rem .1rem;
+    border-radius: 50%;
+    cursor: pointer
+}
+
+.fav-item:hover::before {
+    opacity: .65;
+}
+
+.fav-item::before {
+    width: 15px;
+    content: url('../img/red_heart.svg');
+}
+
+.camisa-item button {
+    background: #000;
+    color: #fff;
+    padding: .35rem 1rem;
+    cursor: pointer
+}
+
+.camisa-item figcaption {
+    font-size: 12px
+}
+
+.camisa-item img {
+    width: 100%
+}
+
+@media screen and (min-width: 828px) {
+    .camisa-item figure {
+        min-height: 284px;
+        max-height: 284px
+    }
+}
