@@ -19,7 +19,7 @@ class Product extends Model
         $query = "SELECT 
         DISTINCT ps.quantity, ps.sizeId, (SELECT sizeName FROM sizes as s WHERE s.sizeId = ps.sizeId) as sizeName  
         FROM product_size as ps 
-        WHERE ps.productId = :productId";
+        WHERE ps.productId = :productId ORDER BY sizeName DESC";
 
         return $this->customQuery($query, ['productId' => $productId]);
     }
