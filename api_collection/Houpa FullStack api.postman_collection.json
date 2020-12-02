@@ -1,0 +1,430 @@
+{
+	"info": {
+		"_postman_id": "710ead0a-d959-4693-aab4-7647a27d5b5d",
+		"name": "Houpa FullStack api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Stores",
+			"item": [
+				{
+					"name": "Get a stores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "a",
+									"type": "text"
+								},
+								{
+									"key": "img_path",
+									"type": "file",
+									"src": "/D:/downloads/colecoesDeImg/esphirra.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE}}/lojas",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"lojas"
+							]
+						},
+						"description": "Cria um registro"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a store",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "a",
+									"type": "text"
+								},
+								{
+									"key": "img_path",
+									"type": "file",
+									"src": "/D:/downloads/colecoesDeImg/esphirra.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE}}/lojas/1",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"lojas",
+								"1"
+							]
+						},
+						"description": "Cria um registro"
+					},
+					"response": []
+				},
+				{
+					"name": "Create store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Livis",
+									"type": "text"
+								},
+								{
+									"key": "img_path",
+									"type": "file",
+									"src": "/D:/downloads/marcas/livis.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE}}/lojas",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"lojas"
+							]
+						},
+						"description": "Cria um registro"
+					},
+					"response": []
+				},
+				{
+					"name": "Update store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "a",
+									"type": "text"
+								},
+								{
+									"key": "img_path",
+									"type": "file",
+									"src": "/D:/downloads/colecoesDeImg/yugiohGames/Yu-Gi-Oh_Reshef_Destruction_Box.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/lojas/atualizar",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"lojas",
+								"atualizar"
+							]
+						},
+						"description": "Cria um registro"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete store",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/lojas/deletar",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"lojas",
+								"deletar"
+							]
+						},
+						"description": "Cria um registro"
+					},
+					"response": []
+				}
+			],
+			"description": "Store folder",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "a",
+									"type": "text"
+								},
+								{
+									"key": "img_path",
+									"type": "file",
+									"src": "/D:/downloads/colecoesDeImg/esphirra.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE}}/produtos",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"produtos"
+							]
+						},
+						"description": "Cria um registro"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "a",
+									"type": "text"
+								},
+								{
+									"key": "img_path",
+									"type": "file",
+									"src": "/D:/downloads/colecoesDeImg/esphirra.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE}}/produtos/8",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"produtos",
+								"8"
+							]
+						},
+						"description": "Cria um registro"
+					},
+					"response": []
+				},
+				{
+					"name": "Create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Camisa diey grey",
+									"type": "text"
+								},
+								{
+									"key": "description\n",
+									"value": "dye grey",
+									"type": "text"
+								},
+								{
+									"key": "img_path",
+									"type": "file",
+									"src": "/D:/downloads/produtos/camiza_diey_sinza.jpg"
+								},
+								{
+									"key": "price",
+									"value": "19",
+									"type": "text"
+								},
+								{
+									"key": "store_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "quantity\n",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "sizeId",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE}}/produtos",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"produtos"
+							]
+						},
+						"description": "Cria um registro"
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "aadsaaaa",
+									"type": "text"
+								},
+								{
+									"key": "description\n",
+									"value": "asdxcds",
+									"type": "text"
+								},
+								{
+									"key": "img_path",
+									"type": "file",
+									"src": "/D:/downloads/colecoesDeImg/yugiohGames/falseBoundKingdom.jfif"
+								},
+								{
+									"key": "price",
+									"value": "13,5",
+									"type": "text"
+								},
+								{
+									"key": "store_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "sizeId",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "5",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/produtos/atualizar",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"produtos",
+								"atualizar"
+							]
+						},
+						"description": "Cria um registro"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/produtos/deletar",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"produtos",
+								"deletar"
+							]
+						},
+						"description": "Cria um registro"
+					},
+					"response": []
+				}
+			],
+			"description": "Store folder",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
