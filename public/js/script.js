@@ -1,5 +1,7 @@
-const BASEApi = `http://localhost/projetosCompletos/houpa_test/src/api`;
+// Diretório base
 const BASE = `http://localhost/projetosCompletos/houpa_test/src/`;
+// Base até a pi
+const BASEApi = `http://localhost/projetosCompletos/houpa_test/src/api`;
 
 let body = document.querySelector('body');
 let content = document.getElementById('content');
@@ -7,11 +9,18 @@ let modalItem = document.querySelector('.modal-item');
 let productContainer = document.querySelector('.product-container');
 // let slickContainer = document.querySelector('.slick-container');
 
+// Busca resultado por lojas
 fetch(`${BASEApi}/lojas`)
     .then(data => data.json())
     .then(data => formContent(data));
 
 function formContent(data) {
+    console.clear();
+    // Requisição por Lojas
+    console.log('Lojas:');
+    console.log(data);
+
+    // Renderiza o conteúdo
     data.map(({ id, name, products, thumb }) => {
         productContainer.innerHTML +=
             `<div id="store-${id}" class="store-container">
@@ -28,6 +37,7 @@ function formContent(data) {
     initSlick();
 }
 
+// Formata informações para o conteúdo de cada produto
 function productContent(products) {
     return products.map(({ id, name, description, photo, price }) => {
         return `<figure id='camisa_${id}' class='camisa-item'>
@@ -42,6 +52,7 @@ function productContent(products) {
     }).join('');
 }
 
+// Busca um produto para a modal
 function fetchForModal(id) {
     fetch(`${BASEApi}/produtos/${id}`)
         .then(data => data.json())
@@ -50,7 +61,11 @@ function fetchForModal(id) {
 
 // Função para gerar informações do modal
 function modalGenerate(...data) {
+    console.clear();
+    // Requisição por Produtos
+    console.log('Produtos:');
     console.log(data);
+
     modalItem.innerHTML = '';
     modalItem.classList.add('active');
     body.classList.add('modal-active');
