@@ -10,12 +10,16 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
     <!-- Custom slick -->
     <link rel="stylesheet" type="text/css" href="css/slickCustom.css" />
-    
+
     <!-- Style css -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
+
+    <section id="modalArea" class="modal-item">
+        <!-- Modal item -->
+    </section>
 
     <section id="content">
         <div class="product-container">
@@ -49,7 +53,6 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
 
-    <script src="js/xhr.js"></script>
     <script src="js/script.js" defer></script>
 </body>
 
