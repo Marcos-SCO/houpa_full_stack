@@ -1,13 +1,6 @@
 const BASEApi = `http://localhost/projetosCompletos/houpa_test/src/api`;
 const BASE = `http://localhost/projetosCompletos/houpa_test/src/`;
 
-// Carrinho
-let cart = [];
-// Qtd inicial para itens
-let modalQt = 1;
-
-let modalKey = 0;
-
 let body = document.querySelector('body');
 let content = document.getElementById('content');
 let modalItem = document.querySelector('.modal-item');
@@ -55,6 +48,7 @@ function fetchForModal(id) {
         .then(data => modalGenerate(data));
 }
 
+// Função para gerar informações do modal
 function modalGenerate(...data) {
     console.log(data);
     modalItem.innerHTML = '';
@@ -85,18 +79,39 @@ function modalGenerate(...data) {
         <div><h5>Tamanhos:</h5>`+
             getGrids(grids)
             + `</div>
-        </div>`;
+            <span class='item-qtd'>Quantidade: </span> 
+            <button class='modal-button black'>Comprar</button>
+            <button class='modal-button white'>Adicionar ao carrinho</button>
+        </div>
+        `;
 
     });
     return modalItem.append(modalContent);
 }
 
+// Traz os tamanhos de produtos com formatação
 function getGrids(grids) {
+    // Pega grids com html formatado
     return grids.map(({ quantity, sizeId, sizeName }) => {
-        return `<span id='${sizeId}' class='grid-item' onclick="this.classList.toggle('active');">${sizeName}</span>`
+        return `<span id='${sizeId}' class='grid-id-${sizeName} grid-item' onclick="showQuantity(this,${quantity})">${sizeName}</span>`
     }).join('');
 }
 
+// Função para mostrar quantidade dos tamanhos
+function showQuantity(e, quantity) {
+    // Pega todos elementos 
+    let gridItems = document.querySelectorAll('.grid-item');
+    // Remove classe ativa 
+    gridItems.forEach(item => item.classList.remove('active'));
+    // Adiciona classe active para elemento
+    e.classList.add('active');
+    // Pega elemento
+    let qtdItem = document.querySelector('.item-qtd');
+    // Joga a quantidade no elemento
+    qtdItem.innerHTML = `Quantidade: ${quantity}`;
+}
+
+/// Função para o slider do slick
 function initSlick() {
     $('.responsive').slick({
         arrows: true,
@@ -126,9 +141,6 @@ function initSlick() {
                 slidesToScroll: 1
             }
         }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
     })
 };
