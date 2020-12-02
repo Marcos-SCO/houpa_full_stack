@@ -1,5 +1,66 @@
 body {
-    margin:0;
+    margin: 0;
     padding: 0;
     font-family: sans-serif
+}
+
+.modal-item {
+    display: none;
+}
+
+.modal-item.active {
+    display: none;
+}
+
+body.modal-active {
+    overflow: hidden;
+}
+
+.modal-item.active {
+    display: block;
+    position: fixed;
+    background: #fff;
+    height: 100vh;
+    z-index: 9999999;
+    width: 100%;
+}
+
+.modal-close {
+    position: absolute;
+    right: 4rem;
+    top: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer
+}
+
+.modal-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%
+}
+
+.modal-info2{
+    position: relative;
+}
+.modal-info2 h5 {
+    font-weight: 400;
+    margin-bottom: .7rem
+}
+
+.fav-item.modal {
+    position: absolute
+}
+
+.grid-item {
+    padding: .5rem .45rem;
+    background: #f5f5f5;
+    font-size: .85rem;
+    cursor: pointer;
+    margin-right: 1rem
+}
+.grid-item.active {
+    background: #b0b0b0;;
+    color: #111
 }
