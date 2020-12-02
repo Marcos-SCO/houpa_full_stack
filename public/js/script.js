@@ -72,18 +72,34 @@ function modalGenerate(...data) {
         // modal info 2
         modalContent.innerHTML += `<div class='modal-info2'>
         <span id='${id}' class='fav-item modal'></span>
-        <h5>Camisas</h5>
-        <h2>${name}</h2>
-        <h4>${description}</h4>
-        <h1>R$ ${price}</h1>
-        <div><h5>Tamanhos:</h5>`+
-            getGrids(grids)
-            + `</div>
-            <span class='item-qtd'>Quantidade: </span> 
-            <button class='modal-button black'>Comprar</button>
-            <button class='modal-button white'>Adicionar ao carrinho</button>
+        <p>Camisas</p>
+        <p><b>${name}</b></p>
+        <p>${description}</p>
+        <p><b>R$ ${price}</b></p>
+        <div><p>Tamanhos:</p>`+ getGrids(grids) + `</div>
+        <span class='item-qtd'>Quantidade: </span> 
+        <button class='modal-button black'>Comprar</button>
+        <button class='modal-button white'>Adicionar ao carrinho</button>
+        <div>
+            <p>Frete</p>
+            <p>Calcule o frete estimado para sua região</p>
+            <div class='calc'>
+                <input type="text" placeholder="CEP" class='calc-input' />
+                <button class='calc-btn'>Calcular</button>
+            </div>
+            <p>Não sei meu cep</p>
         </div>
-        `;
+        <div class='class='share''>
+            <p>Compartilhar</p>
+            <div class='share-img'>
+               <img src='img/insta.svg' alt='Instagram'>
+               <img src='img/pinterest.svg' alt='Pinterest'>
+               <img src='img/whats.svg' alt='WhatsApp'>
+               <img src='img/face.svg' alt='Facebook'>
+               <img src='img/linkedin.svg' alt='LinkedIn'>
+            </div>
+        </div>
+        </div>`;
 
     });
     return modalItem.append(modalContent);
@@ -130,8 +146,8 @@ function initSlick() {
         {
             breakpoint: 600,
             settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToShow: 1,
+                slidesToScroll: 1
             }
         },
         {
